@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <title>เว็บแรกของฉัน</title>
+</head>
+<body>
+    <h1>ยินดีต้อนรับ!</h1>
+    <p>นี่คือเว็บไซต์แรกที่ฉันสร้างขึ้น</p>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <title>เว็บไซต์ของ [ญาณภัทร พรหมอินทร์]</title>
+</head>
+<body>
+    <h1>หน้าแนะนำตัวของฉัน</h1>
+
+    <img src="274803198_666169684733947_379122492106210876_n.jpg" alt="รูปภาพของฉัน" width="200">
+    <p>สวัสดีครับ! นี่คือหน้าเว็บแนะนำตัวของฉัน</p>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th colspan="2">ข้อมูลส่วนตัว</th>
+            </tr>
+        </thead>
+        <tbody>
+ 			<tr>
+                <td>รหัสประจำตัว</td>
+                <td>[ใส่รหัสประจำตัวของคุณ 673380580-0]</td>
+            </tr>
+            <tr>
+                <td>ชื่อ</td>
+                <td>นาย ญาณภัทร พรหมอินทร์</td>
+            </tr>
+            <tr>
+                <td>อีเมล</td>
+                <td>[yannapat.p@kkumail.com]</td>
+            </tr>
+            <tr>
+                <td>ความสนใจ</td>
+                <td>[ดูกีฬา]</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <title>เว็บไซต์ของ[ชื่อของนักศึกษา]</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <style>
+body {
+            background-color: #d3e6f8;
+            font-family: Itim, sans-serif;
+        }
+        h1 {
+            color: #780b57;
+            text-align: center;
+        }
+
+        p {
+            font-size: 16px;
+            text-align: center;
+        }
+
+        img {
+            width: 200px;
+            /* กำหนดความกว้างของรูปภาพ */
+            height: 200px;
+            /* กำหนดความสูงของรูปภาพ */
+            border: 10px solid #13c60a;
+            /* เพิ่มขอบสีฟ้าทึบขนาด 5px */
+            border-radius: 50%;
+            /* ทำให้รูปภาพเป็นวงกลม */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* เพิ่มเงาให้รูปภาพ */
+            display: block;
+            /* จัดให้รูปภาพอยู่คนละบรรทัดกับข้อความ */
+            margin: 20px auto;
+            /* จัดให้อยู่กึ่งกลางหน้าเว็บ */
+        }
+
+        table {
+            width: 80%;
+            /* กำหนดความกว้างของตาราง */
+            border-collapse: collapse;
+            /* รวมเส้นขอบของเซลล์ให้เป็นเส้นเดียว */
+            margin: 20px auto;
+            /* จัดให้อยู่กึ่งกลางหน้าเว็บ */
+            background-color: #ffffff;
+        }
+        th, td {
+            border: 1px solid #0d0d0d;
+            /* เพิ่มเส้นขอบเซลล์ */
+            padding: 12px;
+            /* เพิ่มระยะห่างภายในเซลล์ */
+        }
+        th {
+            background-color: #7dd90c;
+            /* สีพื้นหลังของหัวตาราง */
+            color: rgb(37, 34, 34);
+            /* สีตัวอักษรของหัวตาราง */
+        }
+        tr:nth-child(even) {
+            background-color: #6fcacf;
+            /* สลับสีพื้นหลังของแถว เพื่อให้อ่านง่ายขึ้น */
+        }
+    </style>
+</head>
+
+
+<div class="rbox">
+        <button onclick="start_random()">กดเพื่อสุ่มตัวเลข 6 หลัก</button>
+        <div id="num">---</div>
+    </div>
+    <script>
+        let n = 0;
+        let numElem = document.getElementById("num");
+
+        function start_random(){
+            if(n>0) return;
+            n = 50;
+            next_number();
+        }
+        function next_number(){
+            var r =  Math.round(Math.random()*999999)+"";
+            numElem.innerText = r.padStart(6,'0');
+            n--;
+            if(n>0){
+               setTimeout(next_number,150-n); 
+            }
+        }
+    </script>
